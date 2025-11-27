@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Onboarding - Step 3</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: white;
+    }
+    .container {
+        display: flex;
+        height: 100vh;
+    }
+    .left {
+        flex: 1;
+        background: blue;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .left img {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .right {
+        flex: 1;
+        background: white;
+        padding: 60px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+    h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    p {
+        color:  gray;
+    }
+    .option {
+        padding: 12px 20px;
+        border: 1px solid ;
+        border-radius: 25px;
+        width: fit-content;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    .option:hover {
+        background: beige;
+    }
+
+    
+    .continue-btn {
+         display: block;
+        margin: 40px auto 0 auto;
+        padding: 12px 25px;
+        background: blue;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="left">
+        <img src="3rd screen.png" alt="woman with laptop">
+    </div>
+
+    <div class="right">
+        <p>Step 3 of 4</p>
+        <h1>Hey there! What brings you here?</h1>
+        <p>This will help us make great recommendations.</p>
+
+        <div class="option selected">Social Interaction</div>
+        <div class="option">Personal development</div>
+        <div class="option">Entertainment and Fun</div>
+        <div class="option">Rewards and recognition</div>
+<a href="4th.html">
+ <button class="continue-btn">Continue</button>
+</a>
+    </div>
+
+</div>
+
+</body>
+</html>

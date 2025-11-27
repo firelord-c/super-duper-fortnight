@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Add Photo Page</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        display: flex;
+        height: 100vh;
+    }
+    .left-panel {
+        flex: 1;
+        background-color: blue; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .left-panel img {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 10px;
+    }
+    .right-panel {
+        flex: 1;
+        background-color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 50px;
+        
+    }
+    .step {
+        font-size: 14px;
+        color:darkgray;
+        margin-bottom: 10px;
+    }
+    h1 {
+        margin: 0;
+        margin-bottom: 10px;
+    }
+    p {
+        color:darkgray;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .buttons {
+        display: flex;
+        gap: 10px;
+    }
+    button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .upload-btn {
+        background-color: blue;
+        color: white;
+        margin-top: 20%;
+    }
+    .skip-btn {
+        background-color: transparent;
+        color: gray;
+        margin-top: 20%;
+    }
+</style>
+</head>
+<body>
+
+<div class="left-panel">
+    <img src="first boy.png" alt="User Photo">
+</div>
+
+<div class="right-panel">
+    <div class="step">Step 2 of 4</div>
+    <h1>Add Photo</h1>
+    <p>Add a photo so other members know who you are</p>
+<img src="Ellipse 32.png" alt="Profile">
+    <div class="buttons">
+        <button class="upload-btn">Upload a photo</button>
+        <button class="skip-btn">Skip</button>
+    </div>
+</div>
+
+</body>
+</html>
