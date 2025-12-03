@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design System</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Barlow", sans-serif;
+    background: #ffffff;
+    color: #162542;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 900;
+}
+
+p {
+    margin: 0;
+}
+
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background: white;
+    padding: 0 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+    z-index: 10;
+}
+
+.TM {
+    background: #F16718;
+    padding: 6px 12px;
+    border-radius: 4px;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.title {
+    font-weight: 900;
+    font-size: 18px;
+    background-color: #162542;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+}
+
+
+.page-wrapper {
+    margin-top: 90px;
+    padding: 40px;
+}
+
+
+.colors-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.colors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.color-card {
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    height: 60px;      
+    display: flex;
+    align-items: center;
+}
+
+
+.orange { background: #F16718; color: white; }
+.orange-light { background: #FF9B62; color: white; }
+.dark-blue { background: #162542; color: white; }
+.gray-blue { background: #7B8BAD; color: white; }
+.light-gray { background: #E8EFF2; color: black; }
+.white-card { background: #ffffff; color: black; border: 1px solid #ddd; }
+
+
+.typography-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.two-column-typography {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    background: #f6f7f9;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+}
+
+.type-block p {
+    font-size: 18px;
+    color: #7B8BAD;
+}
+
+
+.typography-example {
+    background: #f6f7f9;
+    padding: 25px;
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.typography-example p {
+    color: #7B8BAD;
+    font-size: 16px;
+}
+
+.button-section h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+button {
+    padding: 10px 15px;   
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    width: 100%;          
+}
+
+
+.btn-primary { background: #F16718; color: white; }
+.btn-secondary { background: #162542; color: white; }
+.btn-tetiary { background: #FF9B62; color: white; }
+.btn-quaternary { background: #7B8BAD; color: white; }
+
+
+@media (max-width: 900px) {
+    .colors-grid { grid-template-columns: repeat(2, 1fr); }
+    .two-column-typography { grid-template-columns: 1fr; }
+    .typography-example { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+    .colors-grid { grid-template-columns: 1fr; }
+    .button-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+
+<div class="top-bar">
+    <div class="TM">TM</div>
+    <div class="title">Design System</div>
+</div>
+
+<div class="page-wrapper">
+
+
+    <section class="colors-section">
+        <h2>Colors</h2>
+
+        <div class="colors-grid">
+            <div class="color-card orange">#F16718</div>
+            <div class="color-card orange-light">#FF9B62</div>
+            <div class="color-card dark-blue">#162542</div>
+            <div class="color-card gray-blue">#7B8BAD</div>
+            <div class="color-card light-gray">#E8EFF2</div>
+            <div class="color-card white-card">#FFFFFF</div>
+        </div>
+    </section>
+
+    <section class="typography-section">
+        <h2>Typography</h2>
+
+        <div class="two-column-typography">
+            <div class="type-block">
+                <h1>BARLOW</h1>
+            </div>
+
+            <div class="type-block">
+                <p>ABCDEFGHIJKMNOPQRSTUVWXYZ</p>
+                <p>abcdefghijklmnopqrstuvwxyz</p>
+            </div>
+        </div>
+
+        
+        <div class="typography-example">
+            <div>
+                <h3>Heading 3</h3>
+                <p>MORBI IN SEM QUIS</p>
+            </div>
+
+            <div>
+                <h3>Behold the Son of Man</h3>
+                <p>Example body text inside a design system.</p>
+            </div>
+        </div>
+
+    </section>
+
+   
+    <section class="button-section">
+        <h2>Buttons</h2>
+
+        <div class="button-row">
+            <button class="btn-primary">PRE-ORDER</button>
+            <button class="btn-secondary">PRE-ORDER</button>
+            <button class="btn-tetiary">PRE-ORDER</button>
+            <button class="btn-quaternary">PRE-ORDER</button>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
