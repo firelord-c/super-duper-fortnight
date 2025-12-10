@@ -2,87 +2,301 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Add Photo Page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Typemaster Keyboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;900&display=swap" rel="stylesheet">
+
 <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        display: flex;
-        height: 100vh;
-    }
-    .left-panel {
-        flex: 1;
-        background-color: blue; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .left-panel img {
-        max-width: 100%;
-        max-height: 100%;
-        border-radius: 10px;
-    }
-    .right-panel {
-        flex: 1;
-        background-color: whitesmoke;
-        display: flex;
+
+body {
+    font-family: 'Barlow', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: white;
+}
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 55px;
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 1000;
+}
+
+.TM {
+    background: #F16718;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.Pre {
+    background: #162542;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.page-wrapper {
+    padding: 0 60px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 100px 40px 20px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 450px;
+}
+
+.button-row {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.btn-orange {
+    background: #F16718;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.release-text {
+    font-weight: 700;
+    color: #7B8BAD;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+
+.image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.hero-image img,
+.small-image img,
+.big-image img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+
+.decor-side {
+    position: absolute;
+    width: 30px;
+    height: 120px;
+    background: #f6f7f9;
+    right: -35px;    
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 12px;
+}
+
+
+.decor-bottom-left {
+    position: absolute;
+    width: 22px;
+    height: 70px;
+    background:#f6f7f9;
+    left: -25px;      
+    bottom: 0;
+    border-radius: 12px;
+}
+
+
+.three-column-section {
+    margin-top: 80px;
+    padding: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.text-block {
+    background: #F2F4F6;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.text-block h2 {
+    font-size: 22px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.text-block p {
+    color: #7B8BAD;
+    line-height: 1.5;
+}
+
+
+.features {
+    padding: 60px 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 35px;
+}
+
+.feature-card {
+    background: #F2F4F6;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.feature-card .icon {
+    width: 45px;
+    height: 45px;
+    background: #F16718;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #7B8BAD;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+@media (max-width: 900px) {
+    .hero {
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 50px;
-        
-    }
-    .step {
-        font-size: 14px;
-        color:darkgray;
-        margin-bottom: 10px;
-    }
-    h1 {
-        margin: 0;
-        margin-bottom: 10px;
-    }
-    p {
-        color:darkgray;
-        margin-bottom: 20px;
         text-align: center;
     }
-    .buttons {
-        display: flex;
-        gap: 10px;
+
+    .three-column-section {
+        grid-template-columns: 1fr;
     }
-    button {
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
     }
-    .upload-btn {
-        background-color: blue;
-        color: white;
-        margin-top: 20%;
+}
+
+@media (max-width: 600px) {
+    .features {
+        grid-template-columns: 1fr;
     }
-    .skip-btn {
-        background-color: transparent;
-        color: gray;
-        margin-top: 20%;
-    }
+}
 </style>
 </head>
+
 <body>
 
-<div class="left-panel">
-    <img src="first boy.png" alt="User Photo">
+<div class="top-bar">
+    <div class="TM">TM</div>
+    <div class="Pre">PRE-ORDER NOW</div>
 </div>
 
-<div class="right-panel">
-    <div class="step">Step 2 of 4</div>
-    <h1>Add Photo</h1>
-    <p>Add a photo so other members know who you are</p>
-<img src="Ellipse 32.png" alt="Profile">
-    <div class="buttons">
-        <button class="upload-btn">Upload a photo</button>
-        <button class="skip-btn">Skip</button>
+<div class="page-wrapper">
+
+<section class="hero">
+
+    <div class="hero-text">
+        <h1>TYPemaster KEYboard</h1>
+        <p>Improve your productivity and gaming without breaking the bank...</p>
+
+        <div class="button-row">
+            <button class="btn-orange">PRE-ORDER NOW</button>
+            <span class="release-text">RELEASE ON 5/27</span>
+        </div>
     </div>
+
+   
+    <div class="image-wrapper hero-image">gi
+        <img src="Group 3.png" alt="Keyboard Image">
+        <div class="decor-side"></div>
+    </div>
+
+</section>
+
+
+
+<section class="three-column-section">
+
+  
+    <div class="col small-image">
+        <div class="image-wrapper">
+            <img src="Group 3 Copy 2.png" alt="">
+            <div class="decor-bottom-left"></div>
+        </div>
+    </div>
+
+    <div class="col big-image">
+        <img src="Group 3 Copy.png" alt="">
+    </div>
+
+    <div class="col">
+        <div class="text-block">
+            <h2>MECHANICAL WIRELESS KEYBOARD</h2>
+            <p>The Typemaster keyboard boasts top-notch mechanical switches 
+               and a durable build quality. It is designed for productivity, 
+               comfort, and style.</p>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section class="features">
+    <div class="feature-card">
+        <img src="Group 8.png" class="icon" alt="">
+        <h3>HIGHLY COMPATIBLE</h3>
+        <p>Easy to use and works well with all major devices.</p>
+    </div>
+
+    <div class="feature-card">
+        <img src="Group 7.png" class="icon" alt="">
+        <h3>WIRELESS</h3>
+        <p>Reliable wireless connection with low latency performance.</p>
+    </div>
+
+    <div class="feature-card">
+        <img src="Group 5.png" class="icon" alt="">
+        <h3>HIGH CAPACITY BATTERY</h3>
+        <p>Long-lasting battery life for uninterrupted workflow.</p>
+    </div>
+
+    <div class="feature-card">
+        <img src="Group.png" class="icon" alt="">
+        <h3>RGB BACKLIGHT</h3>
+        <p>Customizable lighting to match your setup.</p>
+    </div>
+</section>
+
 </div>
 
 </body>
